@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<link rel="icon" href="data:," />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Midnight Convenience Store — 3D Diorama</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #0f141a;
+  }
+  body { -webkit-tap-highlight-color: transparent; }
+  #frame {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 96vw;
+    height: 94vh;
+    transform: translate(-50%, -50%);
+    background: #0f141a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #stage {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #0f141a;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    outline: none;
+    cursor: grab;
+  }
+  #stage:active {
+    cursor: grabbing;
+  }
+  #overlay {
+    position: fixed;
+    top: 24px;
+    left: 28px;
+    color: #e4f6fb;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    pointer-events: none;
+    user-select: none;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  }
+  #overlay h1 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    letter-spacing: 0.08em;
+    color: #ff8466;
+  }
+  #overlay p {
+    font-size: 0.78rem;
+    margin: 0;
+    opacity: 0.75;
+    letter-spacing: 0.04em;
+  }
+  #controls-hint {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(16, 21, 29, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 6px 18px;
+    color: #9ba7ab;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.75rem;
+    pointer-events: none;
+    letter-spacing: 0.03em;
+  }
+  #controls-hint kbd {
+    background: #202936;
+    color: #e4f6fb;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #4a5458;
+    margin: 0 2px;
+  }
+</style>
+</head>
+<body>
+<div id="frame">
+  <canvas id="stage" aria-label="3D Pixel Diorama: Midnight Convenience Store" tabindex="0"></canvas>
+</div>
+<div id="overlay">
+  <h1>MIDNIGHT MART 24H</h1>
+  <p>Cửa hàng tiện lợi lúc 02:00 sáng &middot; Classic Pixel Art</p>
+</div>
+<div id="controls-hint">
+  <kbd>Kéo chuột</kbd> Xoay góc nhìn &middot; <kbd>R</kbd> Đặt lại Hero Camera &middot; <kbd>Cuộn</kbd> Zoom
+</div>
+<script src="./dist/app.js"></script>
+</body>
+</html>
